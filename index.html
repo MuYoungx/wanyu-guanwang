@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万裕德高 - 专业云计算服务提供商</title>
+  <!-- 引入外部资源 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!-- 引入自定义样式 -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- 配置Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#36CFC9',
+            dark: '#1D2129',
+            light: '#F2F3F5',
+            'gray-100': '#F7F8FA',
+            'gray-200': '#E5E6EB',
+            'gray-300': '#C9CDD4',
+            'gray-400': '#86909C',
+            'gray-500': '#4E5969',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loadingScreen = document.getElementById('loading-screen');
+      const progressBar = document.getElementById('loading-progress-bar');
+      
+      // 启动进度条动画
+      progressBar.style.width = '100%';
+      
+      // 1秒后隐藏加载页面
+      setTimeout(function() {
+        loadingScreen.style.opacity = '0';
+        setTimeout(function() {
+          loadingScreen.style.display = 'none';
+        }, 300);
+      }, 1000);
+    });
+  </script>
+  <style>
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #165DFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+      font-size: 24px;
+    }
+    #loading-progress {
+      width: 10%;
+      height: 4px;
+      background-color: rgba(255, 255, 255, 0.3);
+      margin-top: 20px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    #loading-progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: white;
+      transition: width 1s linear;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-dark bg-white">
+  <!-- 加载页面 -->
+  <div id="loading-screen">
+    <div>加载中，请稍候...</div>
+    <div id="loading-progress">
+      <div id="loading-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2">
+          <img class="logo" src="img/logo.png" alt="logo">
+        </a>
+
+        <!-- 桌面导航 -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="text-gray-500 hover:text-primary transition-colors">首页</a>
+          <a href="#about" class="text-gray-500 hover:text-primary transition-colors">关于我们</a>
+          <a href="#services" class="text-gray-500 hover:text-primary transition-colors">服务</a>
+          <a href="#cases" class="text-gray-500 hover:text-primary transition-colors">案例</a>
+          <a href="#team" class="text-gray-500 hover:text-primary transition-colors">团队</a>
+          <a href="#contact" class="text-gray-500 hover:text-primary transition-colors">联系我们</a>
+        </nav>
+
+        <!-- 咨询按钮 -->
+        <a href="#contact"
+          class="hidden md:inline-block bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-colors">
+          立即咨询
+        </a>
+
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-500 focus:outline-none">
+          <i class="fa fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
+      <div class="container mx-auto px-4 py-3 space-y-3">
+        <a href="#home" class="block text-gray-500 hover:text-primary py-2">首页</a>
+        <a href="#about" class="block text-gray-500 hover:text-primary py-2">关于我们</a>
+        <a href="#services" class="block text-gray-500 hover:text-primary py-2">服务</a>
+        <a href="#cases" class="block text-gray-500 hover:text-primary py-2">案例</a>
+        <a href="#team" class="block text-gray-500 hover:text-primary py-2">团队</a>
+        <a href="#contact" class="block bg-primary text-white text-center px-5 py-2 rounded-lg">
+          立即咨询
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 英雄区域 -->
+    <section id="home"
+      class="pt-24 md:pt-0 min-h-screen flex items-center bg-gradient-to-br from-primary/5 to-secondary/5">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark">
+              深耕云领域与软件开发<br>
+              <span class="text-primary">提供全生命周期服务</span>
+            </h1>
+            <p class="text-gray-500 text-lg md:text-xl max-w-xl">
+              万裕德高拥有专业的云服务与软件开发团队，为企业提供从需求分析、方案设计到部署实施、运维优化的全流程云服务与软件开发支持。
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <a href="#services"
+                class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-primary/20">
+                了解服务
+              </a>
+              <a href="#contact"
+                class="bg-white border border-gray-200 hover:border-primary text-dark px-8 py-3 rounded-lg font-medium transition-all">
+                联系我们
+              </a>
+            </div>
+            <div class="flex items-center space-x-6 pt-6">
+              <div class="flex -space-x-2">
+                <img src="img/1001-100x100.jpg" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                <img src="img/1002-100x100.jpg" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                <img src="img/1003-100x100.jpg" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                <img src="img/1004-100x100.jpg" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                <div
+                  class="w-10 h-10 rounded-full bg-gray-100 border-2 border-white flex items-center justify-center text-xs font-medium">
+                  99+
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center text-yellow-400">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                  <span class="ml-2 text-gray-500">4.8/5</span>
+                </div>
+                <p class="text-sm text-gray-400">来自200+客户的好评</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full"></div>
+            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-secondary/10 rounded-full"></div>
+            <img src="img/20250812-162449.png" alt="云计算服务" class="w-full h-auto rounded-2xl shadow-xl relative z-10">
+            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg z-20 max-w-[200px]">
+              <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500">
+                  <i class="fa fa-check"></i>
+                </div>
+                <h3 class="font-medium">100% 安全保障</h3>
+              </div>
+              <p class="text-sm text-gray-500">专业团队提供全方位安全防护</p>
+            </div>
+            <div class="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg z-20 max-w-[180px]">
+              <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500">
+                  <i class="fa fa-tachometer"></i>
+                </div>
+                <h3 class="font-medium">高效响应</h3>
+              </div>
+              <p class="text-sm text-gray-500">7×24小时技术支持服务</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">关于万裕德高</h2>
+          <p class="text-gray-500 text-lg">专业的云计算服务提供商，致力于为企业提供全方位的云服务解决方案</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <div class="absolute -top-8 -left-8 w-40 h-40 bg-primary/5 rounded-full"></div>
+            <img src="img/20250812-163404.png" alt="" class="w-full h-auto rounded-xl shadow-lg relative z-10">
+            <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg z-20 max-w-[250px]">
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <h3 class="text-3xl font-bold text-primary">8+</h3>
+                  <p class="text-sm text-gray-500">年行业经验</p>
+                </div>
+                <div>
+                  <h3 class="text-3xl font-bold text-primary">800+</h3>
+                  <p class="text-sm text-gray-500">成功案例</p>
+                </div>
+                <div>
+                  <h3 class="text-3xl font-bold text-primary">30+</h3>
+                  <p class="text-sm text-gray-500">专业工程师</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h3 class="text-2xl font-bold">我们的实力与承诺</h3>
+            <p class="text-gray-500">
+              万裕德高拥有一支由资深云架构师、运维工程师和技术顾问组成的专业团队，他们均具备多年公有云服务经验，熟悉各大厂商的产品特性、技术架构和最佳实践。
+            </p>
+            <p class="text-gray-500">
+              从企业上云初期的需求分析、方案设计，到中期的部署实施、数据迁移，再到后期的性能监控、故障排查与资源优化，我们的团队都能提供全生命周期的专业服务。
+            </p>
+
+            <div class="space-y-4 pt-4">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 flex-shrink-0">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg">专业团队</h4>
+                  <p class="text-gray-500">资深云架构师和工程师，平均拥有8年以上行业经验</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 flex-shrink-0">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg">全生命周期服务</h4>
+                  <p class="text-gray-500">从规划到实施，再到运维优化，提供一站式云服务</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 flex-shrink-0">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg">安全可靠</h4>
+                  <p class="text-gray-500">全方位安全防护体系，保障企业数据安全与业务稳定</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact"
+              class="inline-block bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-colors mt-4">
+              了解更多 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 服务 -->
+    <section id="services" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">我们的服务</h2>
+          <p class="text-gray-500 text-lg">提供全方位的云计算服务，满足企业不同阶段的需求</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 服务卡片1 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-cloud text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">云架构设计</h3>
+            <p class="text-gray-500 mb-6">
+              根据企业业务需求，设计高可用、高性能、安全可靠的云架构方案，选择合适的云服务产品。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                需求分析与评估
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                架构方案设计
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                云资源规划
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- 服务卡片2 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-cogs text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">云部署实施</h3>
+            <p class="text-gray-500 mb-6">
+              专业团队负责云环境搭建、应用部署与配置，确保业务系统顺利迁移至云端并正常运行。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                云环境搭建配置
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                应用程序部署
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                系统测试与验证
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- 服务卡片3 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">软件开发服务</h3>
+            <p class="text-gray-500 mb-6">
+              提供定制化软件开发解决方案，包括需求分析、架构设计、开发测试及部署维护全流程服务。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                需求分析与系统设计
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                应用系统开发实现
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                测试与质量保障
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                系统部署与维护
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- 服务卡片4 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-database text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">数据迁移服务</h3>
+            <p class="text-gray-500 mb-6">
+              安全、高效地将企业数据从本地数据中心或其他云平台迁移至目标云环境，确保数据完整性。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                数据迁移规划
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                迁移执行与监控
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                数据验证与校验
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- 服务卡片4 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-line-chart text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">云运维管理</h3>
+            <p class="text-gray-500 mb-6">
+              提供7×24小时云资源监控、故障处理、性能优化服务，保障云端业务稳定运行。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                资源监控告警
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                故障诊断处理
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                系统性能调优
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- 服务卡片5 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-shield text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">云安全服务</h3>
+            <p class="text-gray-500 mb-6">
+              构建全方位云安全防护体系，包括漏洞扫描、安全加固、数据加密、合规审计等服务。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                安全评估与加固
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                数据安全防护
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                安全合规审计
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- 服务卡片6 -->
+          <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all scale-hover">
+            <div class="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+              <i class="fa fa-lightbulb-o text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">云优化咨询</h3>
+            <p class="text-gray-500 mb-6">
+              针对现有云环境进行评估分析，提供资源优化、成本控制、架构改进的专业建议。
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                云资源优化
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                成本分析与控制
+              </li>
+              <li class="flex items-center text-gray-500">
+                <i class="fa fa-angle-right text-primary mr-2"></i>
+                架构优化建议
+              </li>
+            </ul>
+            <a href="#contact" class="text-primary font-medium hover:underline">
+              咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据统计 -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-bold mb-2">800+</div>
+            <p class="text-white/80">成功案例</p>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-bold mb-2">1000+</div>
+            <p class="text-white/80">企业客户</p>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-bold mb-2">30+</div>
+            <p class="text-white/80">专业工程师</p>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl md:text-5xl font-bold mb-2">5+</div>
+            <p class="text-white/80">服务年限</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 案例展示 -->
+    <section id="cases" class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">成功案例</h2>
+          <p class="text-gray-500 text-lg">我们为各行业客户提供专业的云计算服务，助力企业数字化转型</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <!-- 案例筛选 -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button class="case-filter active px-6 py-2 rounded-full bg-primary text-white">全部案例</button>
+          <button
+            class="case-filter px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">电商行业</button>
+          <button
+            class="case-filter px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">金融行业</button>
+          <button
+            class="case-filter px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">医疗行业</button>
+          <button
+            class="case-filter px-6 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">教育行业</button>
+        </div>
+
+        <!-- 案例网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 案例1 -->
+          <div class="case-item group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative overflow-hidden">
+              <img src="img/3-600x400.jpg" alt="电商平台云架构优化案例"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                电商行业
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">电商平台云架构优化</h3>
+              <p class="text-gray-500 mb-4">为某大型电商平台提供云架构优化服务，支持高并发场景，降低云资源成本30%。</p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                查看详情 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 案例2 -->
+          <div class="case-item group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative overflow-hidden">
+              <img src="img/4-600x400.jpg" alt="金融行业数据迁移案例"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                金融行业
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">金融行业数据迁移</h3>
+              <p class="text-gray-500 mb-4">为某银行完成核心系统数据迁移，确保零数据丢失、零业务中断，符合金融监管要求。</p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                查看详情 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 案例3 -->
+          <div class="case-item group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative overflow-hidden">
+              <img src="img/5-600x400.jpg" alt="医疗机构云平台搭建"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                医疗行业
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">医疗机构云平台搭建</h3>
+              <p class="text-gray-500 mb-4">为连锁医疗机构搭建私有云平台，实现数据共享与业务协同，满足医疗数据安全要求。</p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                查看详情 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 案例4 -->
+          <div class="case-item group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative overflow-hidden">
+              <img src="img/6-600x400.jpg" alt="在线教育云服务解决方案"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                教育行业
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">在线教育云服务解决方案</h3>
+              <p class="text-gray-500 mb-4">为在线教育平台提供弹性云服务，支持百万级用户同时在线学习，保障系统稳定运行。</p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                查看详情 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 案例5 -->
+          <div class="case-item group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative overflow-hidden">
+              <img src="img/7-600x400.jpg" alt="电商大促弹性扩容方案"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                电商行业
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">电商大促弹性扩容方案</h3>
+              <p class="text-gray-500 mb-4">为电商客户设计双十一促销弹性扩容方案，成功支持单日10亿级交易额，系统零故障。</p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                查看详情 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 案例6 -->
+          <div class="case-item group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+            <div class="relative overflow-hidden">
+              <img src="img/8-600x400.jpg" alt="金融科技云安全解决方案"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute top-4 left-4 bg-primary text-white text-sm px-3 py-1 rounded-full">
+                金融行业
+              </div>
+            </div>
+            <div class="p-6 bg-white">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">金融科技云安全解决方案</h3>
+              <p class="text-gray-500 mb-4">为金融科技公司构建全方位云安全防护体系，通过等保三级认证，保障用户数据安全。</p>
+              <a href="#" class="text-primary font-medium flex items-center">
+                查看详情 <i class="fa fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="#"
+            class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg transition-colors font-medium">
+            查看更多案例
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="team" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">专业团队</h2>
+          <p class="text-gray-500 text-lg">我们拥有一支经验丰富的专业团队，为客户提供最优质的云服务</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- 团队成员1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+            <div class="relative overflow-hidden">
+              <img src="img/20250812-212149.png" alt="邓工程师"
+                class="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <!-- <div class="flex space-x-4">
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">邓工程师</h3>
+              <p class="text-primary mb-3">首席云架构师</p>
+              <p class="text-gray-500 text-sm">5年云计算经验，曾主导多个大型企业云迁移项目</p>
+            </div>
+          </div>
+
+          <!-- 团队成员2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+            <div class="relative overflow-hidden">
+              <img src="img/20250812-212045.png" alt="王工程师"
+                class="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <!-- <div class="flex space-x-4">
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">王工程师</h3>
+              <p class="text-primary mb-3">云架构师</p>
+              <p class="text-gray-500 text-sm">3年云平台运维经验，精通各大云厂商产品与技术</p>
+            </div>
+          </div>
+
+          <!-- 团队成员3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+            <div class="relative overflow-hidden">
+              <img src="img/20250812-212247.png" alt="何工程师"
+                class="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <!-- <div class="flex space-x-4">
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">何工程师</h3>
+              <p class="text-primary mb-3">云安全专家</p>
+              <p class="text-gray-500 text-sm">10年云安全经验，专注于云环境安全防护与合规审计</p>
+            </div>
+          </div>
+
+          <!-- 团队成员4 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+            <div class="relative overflow-hidden">
+              <img src="img/20250812-212338.png" alt="张工程师"
+                class="w-full h-80 object-cover object-center transition-transform duration-500 group-hover:scale-110">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                <!-- <div class="flex space-x-4">
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="#"
+                    class="w-10 h-10 rounded-full bg-white/20 hover:bg-primary flex items-center justify-center text-white transition-colors">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">张工程师</h3>
+              <p class="text-primary mb-3">数据迁移专家</p>
+              <p class="text-gray-500 text-sm">5年数据迁移经验，成功完成上百个企业数据迁移项目</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 客户评价 -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">客户评价</h2>
+          <p class="text-gray-500 text-lg">来自各行业客户的真实反馈</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <div class="testimonial-slider relative">
+          <div class="overflow-hidden">
+            <div class="testimonial-track flex transition-transform duration-500" style="transform: translateX(0);">
+              <!-- 评价1 -->
+              <div class="testimonial-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-gray-100 p-8 rounded-xl h-full">
+                  <div class="flex text-yellow-400 mb-4">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p class="text-gray-500 mb-6 italic">
+                    "万裕德高的团队为我们公司提供了专业的云迁移服务，整个过程非常顺利，没有影响业务正常运行。他们的技术实力和服务态度都非常出色。"
+                  </p>
+                  <div class="flex items-center">
+                    <img src="img/1020-100x100.jpg" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                      <h4 class="font-medium">陈总</h4>
+                      <p class="text-sm text-gray-400">某电商企业 CEO</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 评价2 -->
+              <div class="testimonial-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-gray-100 p-8 rounded-xl h-full">
+                  <div class="flex text-yellow-400 mb-4">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p class="text-gray-500 mb-6 italic">
+                    "作为金融机构，我们对数据安全和系统稳定性要求极高。万裕德高为我们构建的云安全体系让我们非常放心，他们的专业服务值得信赖。"
+                  </p>
+                  <div class="flex items-center">
+                    <img src="img/1021-100x100.jpg" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                      <h4 class="font-medium">林总监</h4>
+                      <p class="text-sm text-gray-400">某银行科技部总监</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 评价3 -->
+              <div class="testimonial-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-gray-100 p-8 rounded-xl h-full">
+                  <div class="flex text-yellow-400 mb-4">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                  </div>
+                  <p class="text-gray-500 mb-6 italic">
+                    "在与万裕德高合作的过程中，他们不仅提供了技术支持，还为我们提供了很多有价值的优化建议，帮助我们降低了30%的云资源成本。"
+                  </p>
+                  <div class="flex items-center">
+                    <img src="img/1022-100x100.jpg" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                      <h4 class="font-medium">郑经理</h4>
+                      <p class="text-sm text-gray-400">某科技公司 IT 经理</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 评价4 -->
+              <div class="testimonial-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-gray-100 p-8 rounded-xl h-full">
+                  <div class="flex text-yellow-400 mb-4">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <p class="text-gray-500 mb-6 italic">
+                    "万裕德高的团队响应速度非常快，无论遇到什么问题，他们总能第一时间提供解决方案。与他们合作让我们的IT部门省了很多心。"
+                  </p>
+                  <div class="flex items-center">
+                    <img src="img/1023-100x100.jpg" alt="客户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                      <h4 class="font-medium">刘院长</h4>
+                      <p class="text-sm text-gray-400">某医疗机构 院长</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 滑动按钮 -->
+          <button
+            class="testimonial-prev absolute top-1/2 -left-4 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors z-10">
+            <i class="fa fa-angle-left text-xl"></i>
+          </button>
+          <button
+            class="testimonial-next absolute top-1/2 -right-4 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors z-10">
+            <i class="fa fa-angle-right text-xl"></i>
+          </button>
+
+          <!-- 指示器 -->
+          <div class="testimonial-dots flex justify-center mt-8 space-x-2">
+            <button class="w-3 h-3 rounded-full bg-primary" data-index="0"></button>
+            <button class="w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+            <!-- <button class="w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+            <button class="w-3 h-3 rounded-full bg-gray-300" data-index="3"></button> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">联系我们</h2>
+          <p class="text-gray-500 text-lg">无论您有任何疑问或需求，我们都将竭诚为您服务</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg mb-1">公司地址</h4>
+                  <p class="text-gray-500">四川省成都市武侯区世纪城南路599天府软件园D5座13层</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg mb-1">联系电话</h4>
+                  <p class="text-gray-500">028-8475-4283</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg mb-1">电子邮箱</h4>
+                  <p class="text-gray-500">service@wanyudegao.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                  <i class="fa fa-clock-o"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-lg mb-1">服务时间</h4>
+                  <p class="text-gray-500">周一至周五: 9:30 - 18:30</p>
+                  <p class="text-gray-500">服务支持热线</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="font-medium text-lg mb-4">关注我们</h4>
+              <div class="flex space-x-4 relative">
+                <a href="javascript:viod(0);"
+                  class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary flex items-center justify-center text-primary hover:text-white transition-colors group">
+                  <i class="fa fa-weixin"></i>
+                  <div
+                    class="absolute hidden group-hover:block bottom-full left-0 -translate-x-1 mb-2 p-2 bg-white rounded shadow-lg z-50">
+                    <img src="img/qrcode.jpg" alt="WeChat QR Code" class="w-24 h-24">
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-3 bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6">立即咨询</h3>
+
+            <form id="contactForm" class="space-y-6" action="http://localhost:3000/submit" method="POST">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-500 mb-2">姓名 <span class="text-red-500">*</span></label>
+                  <input type="text" id="name" name="name"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                    placeholder="请输入您的姓名" required>
+                </div>
+                <div>
+                  <label for="phone" class="block text-gray-500 mb-2">电话 <span class="text-red-500">*</span></label>
+                  <input type="tel" id="phone" name="phone"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                    placeholder="请输入您的联系电话" required>
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-gray-500 mb-2">邮箱 <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                  placeholder="请输入您的邮箱地址">
+              </div>
+
+              <div>
+                <label for="company" class="block text-gray-500 mb-2">公司名称 <span class="text-red-500">*</span></label>
+                <input type="text" id="company" name="company"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                  placeholder="请输入您的公司名称" required>
+              </div>
+
+              <div>
+                <label for="service" class="block text-gray-500 mb-2">感兴趣的服务 <span class="text-red-500">*</span></label>
+                <select id="service" name="service"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                  required>
+                  <option value="" disabled selected>请选择服务类型</option>
+                  <option value="architecture">云架构设计</option>
+                  <option value="deployment">云部署实施</option>
+                  <option value="migration">数据迁移服务</option>
+                  <option value="operation">云运维管理</option>
+                  <option value="security">云安全服务</option>
+                  <option value="optimization">云优化咨询</option>
+                  <option value="software">软件开发服务</option>
+                  <option value="other">其他服务</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-gray-500 mb-2">咨询内容 <span class="text-red-500">*</span></label>
+                <textarea id="message" name="message" rows="4"
+                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                  placeholder="请详细描述您的需求或问题" required></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <input type="checkbox" id="agreement" name="agreement" class="mt-1 mr-2" required>
+                <label for="agreement" class="text-sm text-gray-500">我同意万裕德高根据<a href="#"
+                    class="text-primary hover:underline">隐私政策</a>处理我的个人信息</label>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center">
+                <span>提交咨询</span>
+                <i class="fa fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA区域 -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-6">准备好开始您的云之旅了吗？</h2>
+          <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+            联系我们，获取专业的云计算解决方案，让您的企业在数字化时代保持竞争力。
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contact"
+              class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors">
+              立即咨询
+            </a>
+            <a href="#services"
+              class="border border-white text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-colors">
+              了解服务详情
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <a href="#" class="flex items-center space-x-2 mb-6">
+
+            <img class="logo" src="img/logo.png" alt="logo">
+          </a>
+          <p class="text-gray-400 mb-6">
+            专业的云计算服务提供商，为企业提供全方位的云服务解决方案，助力企业数字化转型。
+          </p>
+          <div class="flex space-x-4 relative">
+            <a href="javascript:viod(0);"
+              class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary flex items-center justify-center transition-colors group">
+              <i class="fa fa-weixin"></i>
+              <div
+                class="absolute hidden group-hover:block bottom-full left-0 -translate-x-1 mb-2 p-2 bg-white rounded shadow-lg z-50">
+                <img src="img/qrcode.jpg" alt="WeChat QR Code" class="w-24 h-24">
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6">快速链接</h3>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">服务</a></li>
+            <li><a href="#cases" class="text-gray-400 hover:text-white transition-colors">案例</a></li>
+            <li><a href="#team" class="text-gray-400 hover:text-white transition-colors">团队</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6">服务项目</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">云架构设计</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">云部署实施</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">数据迁移服务</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">云运维管理</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">云安全服务</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">云优化咨询</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">软件开发服务</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6">联系我们</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+              <i class="fa fa-map-marker text-primary mt-1"></i>
+              <span class="text-gray-400">四川省成都市武侯区世纪城南路599天府软件园D5座13层</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fa fa-phone text-primary"></i>
+              <span class="text-gray-400">028-8475-4283</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fa fa-envelope text-primary"></i>
+              <span class="text-gray-400">service@wanyudegao.com</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <i class="fa fa-clock-o text-primary"></i>
+              <span class="text-gray-400">工作时间: 周一至周五 9:30-18:30</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            &copy; 2025 四川万裕德高网络科技有限公司 版权所有 | <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021007303号</a>
+          </p>
+          <div class="flex space-x-6">
+            <a href="/privacypolicy.html" class="text-gray-500 hover:text-gray-400 text-sm">隐私政策</a>
+            <a href="/termofservice.html" class="text-gray-500 hover:text-gray-400 text-sm">服务条款</a>
+            <a href="/disclaimer.html" class="text-gray-500 hover:text-gray-400 text-sm">法律声明</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <button id="backToTop"
+    class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all z-50">
+    <i class="fa fa-angle-up text-xl"></i>
+  </button>
+
+  <!-- 引入自定义脚本 -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

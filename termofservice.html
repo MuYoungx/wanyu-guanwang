@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务条款</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#0E2E8B',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-fade {
+                scroll-margin-top: 2rem;
+            }
+            .条款标题 {
+                @apply text-xl md:text-2xl font-bold mb-4 text-dark;
+            }
+            .条款内容 {
+                @apply mb-8 text-gray-700 leading-relaxed;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-10 md:py-16 max-w-4xl bg-white shadow-md rounded-lg">
+        <header class="mb-10 border-b pb-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-dark mb-2">服务条款</h1>
+            <p class="text-center text-gray-500">最后更新日期：2025年08月15日</p>
+        </header>
+
+        <main class="prose max-w-none">
+            <!-- 1. 接受条款 -->
+            <section id="acceptance" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                    接受条款
+                </h2>
+                <div class="条款内容 pl-11">
+                    <p>
+                        通过注册、访问或使用我们的服务，您确认您已年满18周岁，并有权利代表您自己或您所代表的实体接受本条款。
+                        如果您代表一家公司或其他法律实体使用我们的服务，则表示您有权使该实体受本条款的约束。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. 服务描述 -->
+            <section id="service-description" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                    服务描述
+                </h2>
+                <div class="条款内容 pl-11">
+                    <p class="mb-4">
+                        云捷科技作为多家公有云服务提供商（包括但不限于阿里云、腾讯云、华为云、AWS、Azure等）的授权代理商，
+                        为客户提供云资源的购买、管理、技术支持等代理服务。我们的服务包括但不限于：
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>协助客户选择适合的云服务方案</li>
+                        <li>提供云资源的购买咨询与办理服务</li>
+                        <li>协助客户进行云资源的配置与管理</li>
+                        <li>提供技术支持与故障排查服务</li>
+                        <li>提供云资源使用报告与优化建议</li>
+                        <li>协助客户处理与上游云服务商的沟通事宜</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. 客户义务 -->
+            <section id="obligations" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                    客户义务
+                </h2>
+                <div class="条款内容 pl-11">
+                    <p class="mb-4">客户在使用我们的服务时，应履行以下义务：</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>提供准确、完整的客户信息，并及时更新</li>
+                        <li>妥善保管账户信息，对使用该账户进行的所有活动负责</li>
+                        <li>遵守所有适用的法律法规以及上游云服务商的服务条款</li>
+                        <li>不得利用云服务从事任何违法违规活动，包括但不限于侵犯他人知识产权、传播有害信息等</li>
+                        <li>及时支付服务费用</li>
+                        <li>配合我们进行必要的身份验证和合规检查</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 4. 费用与支付 -->
+            <section id="fees" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">4</span>
+                    费用与支付
+                </h2>
+                <div class="条款内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>服务费用根据客户所选择的云资源类型、配置和使用时长计算，具体以报价单和订单为准</li>
+                        <li>客户应按照约定的支付周期和方式支付服务费用</li>
+                        <li>所有费用均为税前金额，如需开具发票，将按照国家规定加收相应税费</li>
+                        <li>如客户未按时支付费用，我们有权暂停服务并收取逾期滞纳金（按日利率0.05%计算）</li>
+                        <li>上游云服务商调整价格时，我们有权相应调整服务费用，并会提前30天通知客户</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 5. 知识产权 -->
+            <section id="intellectual-property" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">5</span>
+                    知识产权
+                </h2>
+                <div class="条款内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>客户保留其在使用云服务过程中创建、上传或传输的所有数据和内容的知识产权</li>
+                        <li>上游云服务商保留其提供的云服务、软件、技术和相关知识产权</li>
+                        <li>我们保留提供的代理服务相关的技术和知识产权</li>
+                        <li>未经授权，任何一方不得使用另一方的知识产权</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 6. 保密条款 -->
+            <section id="confidentiality" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">6</span>
+                    保密条款
+                </h2>
+                <div class="条款内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>我们将对在服务过程中获取的客户商业秘密、技术信息和个人信息严格保密</li>
+                        <li>我们仅会为提供服务之目的使用客户的保密信息，且不会向第三方披露，除非获得客户授权或法律要求</li>
+                        <li>客户同意我们收集和使用其必要的信息以提供服务，我们将遵守相关数据保护法律法规</li>
+                        <li>本保密义务在服务终止后仍然有效，有效期为3年</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 7. 责任限制 -->
+            <section id="limitation" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">7</span>
+                    责任限制
+                </h2>
+                <div class="条款内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>我们仅对因自身故意或重大过失造成的客户直接损失承担责任，不对间接损失、预期利益损失等承担责任</li>
+                        <li>因上游云服务商原因导致服务中断或故障的，我们将协助客户进行处理，但不承担直接责任</li>
+                        <li>因不可抗力、网络攻击、政府行为等不可预见或不可控制的原因导致服务中断的，我们不承担责任</li>
+                        <li>我们的累计赔偿责任不超过客户在事故发生前12个月内向我们支付的服务费用总额</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 8. 服务终止 -->
+            <section id="termination" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">8</span>
+                    服务终止
+                </h2>
+                <div class="条款内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>本条款自客户开始使用服务之日起生效，有效期至服务期限届满或双方协商终止</li>
+                        <li>客户可提前30天书面通知我们终止服务，但需支付已产生的费用和相关违约金</li>
+                        <li>如客户严重违反本条款或法律法规，我们有权立即终止服务，并不退还已支付的费用</li>
+                        <li>服务终止后，客户应及时备份和迁移数据，我们不承担数据存储义务，但会按照法律要求保留必要记录</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 9. 适用法律 -->
+            <section id="governing-law" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">9</span>
+                    适用法律
+                </h2>
+                <div class="条款内容 pl-11">
+                    <p>
+                        本条款受中华人民共和国法律管辖，不适用法律冲突原则。因本条款引起的任何争议，双方应首先友好协商解决；
+                        协商不成的，应提交我们所在地有管辖权的人民法院诉讼解决。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 10. 条款变更 -->
+            <section id="changes" class="mb-10 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">10</span>
+                    条款变更
+                </h2>
+                <div class="条款内容 pl-11">
+                    <p>
+                        我们有权根据业务发展和法律法规变化对本条款进行修改。修改后的条款将在我们的网站上公布，
+                        并通过邮件或其他方式通知客户。客户如继续使用服务，视为接受修改后的条款；如不接受，可终止使用服务。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 11. 联系信息 -->
+            <section id="contact" class="mb-6 section-fade">
+                <h2 class="条款标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">11</span>
+                    联系信息
+                </h2>
+                <div class="条款内容 pl-11">
+                    <p class="mb-2">如您对本条款有任何疑问，可通过以下方式联系我们：</p>
+                    <ul class="list-none pl-0 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-3 w-4 text-center"></i>
+                            <span>电话：028-8475-4283</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-primary mr-3 w-4 text-center"></i>
+                            <span>邮箱：service@wanyudegao.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mr-3 w-4 text-center mt-1"></i>
+                            <span>地址：四川省成都市武侯区世纪城南路599天府软件园D5座13层</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-12 pt-6 border-t text-center text-gray-500 text-sm">
+            <p>© 2025 四川万裕德高网络科技有限公司 版权所有</p>
+        </footer>
+    </div>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法律声明</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#0E2E8B',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-fade {
+                scroll-margin-top: 2rem;
+            }
+            .声明标题 {
+                @apply text-xl md:text-2xl font-bold mb-4 text-dark;
+            }
+            .声明内容 {
+                @apply mb-8 text-gray-700 leading-relaxed;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-10 md:py-16 max-w-4xl bg-white shadow-md rounded-lg">
+        <header class="mb-10 border-b pb-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-center text-dark mb-2">法律声明</h1>
+            <p class="text-center text-gray-500">最后更新日期：2025年08月15日</p>
+        </header>
+
+        <main class="prose max-w-none">
+            <!-- 1. 声明范围 -->
+            <section id="scope" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                    声明范围
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p>
+                        本法律声明适用于所有访问和使用四川万裕德高网络科技有限公司（以下简称"本公司"）提供的公有云代理服务及相关网站、产品和服务的用户（以下简称"用户"）。
+                        请用户在使用本公司服务前仔细阅读本法律声明，您对本公司服务的使用将被视为您已接受本声明的全部内容。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. 服务资质 -->
+            <section id="qualification" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span>
+                    服务资质
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p class="mb-4">本公司是经相关部门批准成立的合法企业，具有提供公有云代理服务的合法资质，具体包括：</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>有效的营业执照，经营范围包含云计算服务相关内容</li>
+                        <li>阿里云、腾讯云、华为云、AWS、Azure等主流公有云服务商的正式授权代理资质</li>
+                        <li>遵守国家相关法律法规要求，具备提供相应服务的技术能力和条件</li>
+                    </ul>
+                    <p class="mt-4">用户可向本公司索取相关资质文件进行查验。</p>
+                </div>
+            </section>
+
+            <!-- 3. 责任划分 -->
+            <section id="liability" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
+                    责任划分
+                </h2>
+                <div class="声明内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>本公司作为公有云服务代理商，仅负责提供代理购买、咨询、技术支持等服务，不直接提供底层云基础设施服务</li>
+                        <li>云服务的稳定性、可用性和安全性主要由上游云服务商负责，本公司不对此承担直接责任，但会协助用户处理相关问题</li>
+                        <li>用户使用云服务所产生的一切行为后果由用户自行承担，如因用户违法违规使用导致的任何损失和责任，与本公司无关</li>
+                        <li>本公司仅对因自身过错导致的服务问题承担相应责任，责任范围以双方签订的服务合同约定为准</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 4. 用户行为规范 -->
+            <section id="user-behavior" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">4</span>
+                    用户行为规范
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p class="mb-4">用户在使用本公司代理的云服务时，应遵守以下规定：</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>严格遵守国家法律法规、部门规章及相关政策要求</li>
+                        <li>遵守上游云服务商的服务协议、使用规范和相关规定</li>
+                        <li>不得利用云服务从事任何违法违规活动，包括但不限于：危害国家安全、泄露国家秘密、侵犯他人合法权益、传播违法信息等</li>
+                        <li>不得利用云服务进行任何可能对网络安全造成威胁的行为</li>
+                        <li>如用户违反上述规定，本公司有权暂停或终止服务，并保留追究用户责任的权利</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 5. 知识产权 -->
+            <section id="ip-rights" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">5</span>
+                    知识产权
+                </h2>
+                <div class="声明内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>本公司网站及服务中涉及的商标、标识、软件、技术等知识产权归本公司或相关权利人所有</li>
+                        <li>上游云服务商提供的产品和服务所涉及的知识产权归各云服务商所有</li>
+                        <li>未经本公司或相关权利人书面许可，任何单位和个人不得擅自使用（包括但不限于通过任何机器人、蜘蛛等程序或设备监视、复制、传播、展示、镜像、上载、下载本公司网站中的内容）</li>
+                        <li>用户在使用服务过程中产生的内容，其知识产权归用户所有，但用户授予本公司必要的使用权以提供服务</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 6. 隐私保护 -->
+            <section id="privacy" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">6</span>
+                    隐私保护
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p>
+                        本公司尊重并保护用户的隐私信息，将按照《中华人民共和国个人信息保护法》等相关法律法规的要求，
+                        采取必要措施保护用户信息的安全。本公司收集、使用、存储和披露用户信息的具体规则，请参见本公司的《隐私政策》。
+                        用户同意本公司按照《隐私政策》处理其个人信息。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 7. 免责声明 -->
+            <section id="disclaimer" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">7</span>
+                    免责声明
+                </h2>
+                <div class="声明内容 pl-11">
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>本公司尽力保证所提供信息的准确性和完整性，但不对信息的绝对准确性和完整性做出任何明示或默示的保证</li>
+                        <li>对于因不可抗力、第三方原因、网络安全事件等非本公司原因造成的服务中断或信息丢失，本公司不承担责任</li>
+                        <li>用户通过本公司服务获得的任何信息或建议，仅供参考，不构成任何投资或法律建议</li>
+                        <li>本公司对用户因使用或不能使用本公司服务而造成的任何直接或间接损失不承担责任，除非该损失是由于本公司的故意或重大过失造成的</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 8. 法律适用与争议解决 -->
+            <section id="legal-application" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">8</span>
+                    法律适用与争议解决
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p class="mb-4">本法律声明的订立、执行和解释及争议的解决均适用中华人民共和国法律。</p>
+                    <p>
+                        如双方就本法律声明内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成的，任何一方均有权向本公司所在地有管辖权的人民法院提起诉讼。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 9. 声明的修改与解释 -->
+            <section id="modification" class="mb-10 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">9</span>
+                    声明的修改与解释
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p class="mb-4">本公司保留随时对本法律声明进行修改和更新的权利。修改后的声明将在本公司网站上公布，
+                    并自公布之日起生效。建议用户定期查阅本声明，了解最新内容。</p>
+                    <p>
+                        如对本法律声明有任何疑问，请联系本公司客服部门。本法律声明的解释权及对本公司服务的解释权归本公司所有。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 10. 联系方式 -->
+            <section id="contact-info" class="mb-6 section-fade">
+                <h2 class="声明标题 flex items-center">
+                    <span class="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">10</span>
+                    联系方式
+                </h2>
+                <div class="声明内容 pl-11">
+                    <p class="mb-2">如您对本法律声明有任何疑问，可通过以下方式联系我们：</p>
+                    <ul class="list-none pl-0 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa fa-phone text-primary mr-3 w-4 text-center"></i>
+                            <span>电话：028-8475-4283</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-primary mr-3 w-4 text-center"></i>
+                            <span>邮箱：service@wanyudegao.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mr-3 w-4 text-center mt-1"></i>
+                            <span>地址：四川省成都市武侯区世纪城南路599天府软件园D5座13层</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-12 pt-6 border-t text-center text-gray-500 text-sm">
+            <p>© 2025 四川万裕德高网络科技有限公司 版权所有</p>
+        </footer>
+    </div>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
