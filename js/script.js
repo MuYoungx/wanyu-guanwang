@@ -319,7 +319,7 @@ contactForm.addEventListener('submit', (e) => {
   };
 
   // 调用后端接口
-  fetch('https://www.wanyudegao.com/api/submit-to-dingtalk', {
+  fetch('https://api.wanyudegao.com/submit-to-dingtalk', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
@@ -329,7 +329,7 @@ contactForm.addEventListener('submit', (e) => {
       if (response.status === 405) {
         throw new Error('接口不支持 POST 方法，请检查后端配置');
       }
-      throw new Error(`HTTP 错误! 状态码: ${response.status}`);
+      throw new Error(`HTTP 错误! 状态码: ${response.status},您可能在重复提交请稍后再试！`);
     }
     try {
       return await response.json();

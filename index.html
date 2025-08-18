@@ -34,7 +34,8 @@
       }
     }
   </script>
-  <script>
+  <!-- 加载中 -->
+   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const loadingScreen = document.getElementById('loading-screen');
       const progressBar = document.getElementById('loading-progress-bar');
@@ -51,6 +52,7 @@
       }, 1000);
     });
   </script>
+  <!-- 加载中样式-->
   <style>
     #loading-screen {
       position: fixed;
@@ -85,14 +87,13 @@
 </head>
 
 <body class="font-sans text-dark bg-white">
-  <!-- 加载页面 -->
+   <!-- 加载页面 -->
   <div id="loading-screen">
     <div>加载中，请稍候...</div>
     <div id="loading-progress">
       <div id="loading-progress-bar"></div>
     </div>
   </div>
-
   <!-- 导航栏 -->
   <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
